@@ -1,56 +1,48 @@
-var timeDisplayEl = $('#currentDay');
-var toDo = document.querySelector("#taskInput");
-var toDos = localStorage.getItem("toDos");
-var saveButton = document.querySelector("saveBtn")
-toDo.textContent = toDos;
-
-
-
-function displayTime() {
-    var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
-    timeDisplayEl.text(rightNow);
-  }
-  setInterval(displayTime, 1000);
-
-
-  //Change textarea background color based on time
-var checkTime = function () {
-
-  //Get Current time
-  var currentTime = moment().format('H');
-
-  //get all elements with class "taskarea"
-  var timeBlockElements = $(".textarea");
-
-  //loop through taskarea classes
-  for (var i = 0 ; i < timeBlockElements.length ; i++) {
-
-      //Get element i's ID as a string
-      var elementID = timeBlockElements[i].id;
-
-      //get element by ID
-      var manipID = document.getElementById(timeBlockElements[i].id)
-
-      // //remove any old classes from element
-      // $(timeBlockElements[i].id).removeClass(".present .past .future");
-
-      // apply new class if task is present/past/future
-      if (elementID < currentTime) {
-          $(manipID).addClass("past");
-      } else if (elementID > currentTime) {
-          $(manipID).addClass("future");
+$(document).ready(function() {
+  //listen for save btn clicks
+  $(".saveBtn").on("click",function() {
+    //get nearby values
+    var value = $(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
+    localStorage.setItem(time,value);
+    //show notification that item was save to local storage
+    $(".notification").addClass("show");
+    setTimeout(function() {
+      $(".notification").removeClass("show");
+    }, 5000);
+  });
+  function hourChecker() {
+    var currentTime = moment().hours();
+    $(".time-block").each(function() {
+      var blockHour = parseInt($(this).attr("id").split("-")[1]);
+      if (blockHour < currentTime) {
+        $(this).addClass('past');
+      } else if (blockHour === currentHour) {
+        $(this).removeClass('past');
+        $(this).addClass('present');
       } else {
-          $(manipID).addClass("present");
+        $(this).removeClass('past');
+        $(this).removeClass('present');
+        $(this).addClass('future');
       }
+    });
   }
-}
+  hourChecker();
 
-// checkTime every 5 minutes
-setInterval(checkTime(), (1000 * 60) * 5);
+  //set up interval to check if current time needs to be updated.
+  var interval = setInterval(hourChecker, 300000);
 
-saveButton.addEventListener("click", function() {
-  if (toDos !== null) {
-    toDo.textContent = toDos;
-    localStorage.setItem("toDos", toDos);
-  }
-});
+  //load save data from local storage
+  $("#hour-9 .description").val(localStorage.getItem("hour-9"))
+  $("#hour-10 .description").val(localStorage.getItem("hour-10"))
+  $("#hour-11 .description").val(localStorage.getItem("hour-11"))
+  $("#hour-12 .description").val(localStorage.getItem("hour-12"))
+  $("#hour-13 .description").val(localStorage.getItem("hour-13"))
+  $("#hour-14 .description").val(localStorage.getItem("hour-14"))
+  $("#hour-15 .description").val(localStorage.getItem("hour-15"))
+  $("#hour-16 .description").val(localStorage.getItem("hour-16"))
+  $("#hour-17 .description").val(localStorage.getItem("hour-17"))
+
+  $("#currentDay").text(moment().format("dddd, MMMM Do"))
+})
+

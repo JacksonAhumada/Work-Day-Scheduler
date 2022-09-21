@@ -28,118 +28,106 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
-      <div class="row">
-        <p class="col-sm-3">9:00 A.M.</p>
-
-        <textarea
-          class="col-sm-8 textarea"
-          id="taskInput"
-          name="taskInput"
-          rows="2"
-          cols="50"
-          style="border: solid 3px black"
-        ></textarea>
-        <button class="saveBtn col-sm-1 fa fa-save"  style="font-size:24px"></button>
+    <section class="text-center notification" id="notify">Appointment added to: <code>localStorage</code>✔️</section>
+      <div class="container">
+        <!-- Timeblocks go here -->
+        <div class="row time-block" id="hour-9">
+          <div class="col-md-1 hour">
+            9:00 A.M.
+          </div>
+  
+          <textarea
+            class="col-md-10 description"
+            style="border: solid 3px black"
+          ></textarea>
+          <button class="btn saveBtn col-md-1"  style="font-size:24px"><i class="fa fa-save"></i></button>
+          
+        </div>
+        <div class="row time-block" id="hour-10">
+          <div class="col-md-1 hour">
+            10:00 A.M.
+          </div>
+          
+          <textarea
+            class="col-md-10 description"
+            style="border: solid 3px black"
+          ></textarea>
+          <button class="btn saveBtn col-md-1"  style="font-size:24px"><i class="fa fa-save"></i></button>
+        </div>
+        <div class="row time-block" id="hour-11">
+          <div class="col-md-1 hour">
+            11:00 A.M.
+          </div>
+          <textarea
+            class="col-md-10 description"
+            style="border: solid 3px black"
+          ></textarea>
+          <button class="btn saveBtn col-md-1"  style="font-size:24px"><i class="fa fa-save"></i></button>
+        </div>
+        <div class="row time-block" id="hour-12">
+          <div class="col-md-1 hour">
+            12:00 P.M.
+          </div>
+          <textarea
+            class="col-md-10 description"
+            style="border: solid 3px black"
+          ></textarea>
+          <button class="btn saveBtn col-md-1"  style="font-size:24px"><i class="fa fa-save"></i></button>
+        </div>
+        <div class="row time-block" id="hour-13">
+          <div class="col-md-1 hour">
+            1:00 P.M.
+          </div>
+          <textarea
+            class="col-md-10 description"
+            style="border: solid 3px black"
+          ></textarea>
+          <button class="btn saveBtn col-md-1"  style="font-size:24px"><i class="fa fa-save"></i></button>
+        </div>
+        <div class="row time-block" id="hour-14">
+          <div class="col-md-1 hour">
+            2:00 P.M.
+          </div>
+          <textarea
+            class="col-md-10 description"
+            style="border: solid 3px black"
+          ></textarea>
+          <button class="btn saveBtn col-md-1"  style="font-size:24px"><i class="fa fa-save"></i></button>
+        </div>
+        <div class="row time-block" id="hour-15">
+          <div class="col-md-1 hour">
+            3:00 P.M.
+          </div>
+          <textarea
+            class="col-md-10 description"
+            style="border: solid 3px black"
+          ></textarea>
+          <button class="btn saveBtn col-md-1"  style="font-size:24px"><i class="fa fa-save"></i></button>
+        </div>
+        <div class="row time-block" id="hour-16">
+          <div class="col-md-1 hour">
+            4:00 P.M.
+          </div>
+          <textarea
+            class="col-md-10 description"
+            style="border: solid 3px black"
+          ></textarea>
+          <button class="btn saveBtn col-md-1"  style="font-size:24px"><i class="fa fa-save"></i></button>
+        </div>
+        <div class="row time-block" id="hour-17">
+          <div class="col-md-1 hour">
+            5:00 P.M.
+          </div>        
+          <textarea
+            class="col-md-10 description"
+            
+            style="border: solid 3px black"
+          ></textarea>
+          <button class="btn saveBtn col-md-1"  style="font-size:24px"><i class="fa fa-save"></i></button>
+        </div>
       </div>
-      <div class="row">
-        <p class="col-sm-3">10:00 A.M.</p>
-        <textarea
-          class="col-sm-8"
-          id="taskInput"
-          name="taskInput"
-          rows="2"
-          cols="50"
-          style="border: solid 3px black"
-        ></textarea>
-        <button class="saveBtn col-sm-1 fa fa-save"  style="font-size:24px" ></button>
-      </div>
-      <div class="row">
-        <p class="col-sm-3">11:00 A.M.</p>
-        <textarea
-          class="col-sm-8"
-          id="taskInput"
-          name="taskInput"
-          rows="2"
-          cols="50"
-          style="border: solid 3px black"
-        ></textarea>
-        <button class="saveBtn col-sm-1 fa fa-save"  style="font-size:24px" ></button>
-      </div>
-      <div class="row">
-        <p class="col-sm-3">12:00 A.M.</p>
-        <textarea
-          class="col-sm-8"
-          id="taskInput"
-          name="taskInput"
-          rows="2"
-          cols="50"
-          style="border: solid 3px black"
-        ></textarea>
-        <button class="saveBtn col-sm-1 fa fa-save"  style="font-size:24px" ></button>
-      </div>
-      <div class="row">
-        <p class="col-sm-3">1:00 P.M.</p>
-        <textarea
-          class="col-sm-8"
-          id="taskInput"
-          name="taskInput"
-          rows="2"
-          cols="50"
-          style="border: solid 3px black"
-        ></textarea>
-        <button class="saveBtn col-sm-1 fa fa-save"  style="font-size:24px" ></button>
-      </div>
-      <div class="row">
-        <p class="col-sm-3">2:00 P.M.</p>
-        <textarea
-          class="col-sm-8"
-          id="taskInput"
-          name="taskInput"
-          rows="2"
-          cols="50"
-          style="border: solid 3px black"
-        ></textarea>
-        <button class="saveBtn col-sm-1 fa fa-save"  style="font-size:24px" ></button>
-      </div>
-      <div class="row">
-        <p class="col-sm-3">3:00 P.M.</p>
-        <textarea
-          class="col-sm-8"
-          id="taskInput"
-          name="taskInput"
-          rows="2"
-          cols="50"
-          style="border: solid 3px black"
-        ></textarea>
-        <button class="saveBtn col-sm-1 fa fa-save"  style="font-size:24px" ></button>
-      </div>
-      <div class="row">
-        <p class="col-sm-3">4:00 P.M.</p>
-        <textarea
-          class="col-sm-8"
-          id="taskInput"
-          name="taskInput"
-          rows="2"
-          cols="50"
-          style="border: solid 3px black"
-        ></textarea>
-        <button class="saveBtn col-sm-1 fa fa-save"  style="font-size:24px" ></button>
-      </div>
-      <div class="row">
-        <p class="col-sm-3">5:00 P.M.</p>
-        <textarea
-          class="col-sm-8"
-          id="taskInput"
-          name="taskInput"
-          rows="2"
-          cols="50"
-          style="border: solid 3px black"
-        ></textarea>
-        <button class="saveBtn col-sm-1 fa fa-save"  style="font-size:24px" ></button>
-      </div>
-    </div>
+    
+   
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
